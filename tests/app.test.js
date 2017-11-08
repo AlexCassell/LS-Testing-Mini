@@ -6,63 +6,101 @@ const expect = chai.expect;
 const assert = chai.assert;
 chai.use(sinonChai);
 
+// Arrange => setup
+
+// Act => execute
+
+// Assert
+
 describe('Cases from app.js', () => { // this is a testing suite made up of suites.
     
   describe('apples', () => {
     it('should be an array', () => {
       const apples = cases.apples;
-      expect(apples).to.be.an('object'); // Begin here something is wrong, fix it.
+      expect(apples).to.be.an('array'); // Begin here something is wrong, fix it.
     });
     // write a test to check the correct length of the apples array.
+    it('should have 4 elements', function() {
+      const apples = cases.apples;
+      expect(apples).to.have.lengthOf(4);
+    })
     // write a test to check to see if the apples array contains 'Red Delicious'.
+    it('should include Red delicious', function() {
+      const apples = cases.apples;
+      expect(apples).to.include.('Red Delicious');
+    })
   });
-
   describe('Ben', () => {
     it('should be an object', () => {
       const Ben = cases.Ben;
-      expect(Ben).to.be.an('array');
+      expect(Ben).to.be.an('object');
     });
     // write a test to check if Ben's favorite band is 'Beastie Boys'.
+    it("Are the Beasties Ben's favorite", () => {
+      const Ben = cases.Ben;
+      // const favoriteBand = Ben.favBand;
+      expect(Ben.favBand).to.equal('Beastie Boys');
+    });
   });
 
   describe('Sean', () => {
     it('should be an object', () => {
       const Sean = cases.Sean;
-      expect(Sean).to.be.an('number');
+      expect(Sean).to.be.an('object');
     });
     // write a test to check if Seans's favorite food is 'Pizza'.
+    it('Sean favFood should be Pizza', () => {
+      const Sean = cases.Sean;
+      expect(Sean.favFood).to.equal('Pizza');
+    });
   });
 
   describe('Ryan', () => {
     it('should be an object', () => {
       const Ryan = cases.Ryan;
-      expect(Ryan).to.be.an('string');
+      expect(Ryan).to.be.an('object');
     });
     // write a test to see if Ryan's favBook is `not` 'Harry Potter'.
+    it("Ryan's favBook shoud not be 'Harry Potter' ", () => {
+      const Ryan = cases.Ryan;
+      expect(Ryan.favBook).to.not.equal('Harry Potter');
+    });
   });
 
   describe('Austen', () => {
     it('should be an object', () => {
       const Austen = cases.Austen;
-      expect(Austen).to.be.an('function');
+      expect(Austen).to.be.an('object');
     });
     // write a test to see if Austen's favColor is not 'Gold'.
+    it('should be an object', () => {
+      const Austen = cases.Austen;
+      expect(Austen.favColor).to.not.equal('Gold');
+    });
   });
 
   describe('Karthik', () => {
     it('should be an object', () => {
       const Karthik = cases.Karthik;
-      expect(Karthik).to.be.an('function');
+      expect(Karthik).to.be.an('object');
     });
     // write a test to check if Karthik's favActivity is 'Rock Climbing'.
+    it('should be an object', () => {
+      const Karthik = cases.Karthik;
+      expect(Karthik.favActivity).to.equal('Rock Climbing');
+    });
   });
 
   describe('addNums', () => {
     it('should be a function', () => {
       const addNums = cases.addNums;
-      expect(addNums).to.be.a('object');
+      expect(addNums).to.be.a('function');
     });
     // write a test to check if 'addNums' returns the expected value
+    it('addNums should retutn 5 when passed 3 and 2', () => {
+      const addNums = cases.addNums;
+      expect(addNums(2,3)).to.equal(5);
+    });
       // i.e. if is called addNums(1, 2); the return value should be 3.
   });
 
